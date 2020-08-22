@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 # IMPORTS
+from pathlib import Path
 import json  # we will use json to build an external secrets file that stays untracked
 import os  # this python package's functions allow interface with the OS: Windows, Mac
 # or Linux to access to the path
@@ -34,8 +35,7 @@ def get_secret(setting, my_secrets=secrets):  # Get secret setting or fail with 
 
 SECRET_KEY = get_secret("SECRET_KEY")  # SECRET_KEY is always in settings.py. Get its contents
 
-from pathlib import Path
-import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent

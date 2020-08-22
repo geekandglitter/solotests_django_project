@@ -143,7 +143,7 @@ def t5search(request):
 
     f = open("t5search.log", "r")
     log_contents = f.read()
-    print("__name__ is", __name__)
+
     return render(request, 'display_log5.html', {'log_contents': log_contents})
 
 
